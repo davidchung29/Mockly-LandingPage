@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mockly - AI-Powered Interview Practice</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            /* ===== Border Radius ===== */
+            --border-radius-sm: 8px;
+            --border-radius-md: 13px;
+            --border-radius-lg: 16px;
+            
+            /* ===== Color Palette ===== */
+            /* Primary Colors */
+            --color-primary: #3BA676;
+            --color-primary-light: #EAF7F1;
+            --color-primary-medium: #acd5ca;
+            --color-primary-dark: #205E4A;
+            
+            /* Neutral Colors */
+            --color-text-primary: #1A1A1A;
+            --color-text-secondary: #6B7280;
+            --color-background: #F9FAFB;
+            --color-white: #FFFFFF;
+            --color-glass: rgba(255, 255, 255, 0.7);
+            
+            /* Semantic Colors */
+            --color-success: #3BA676;
+            --color-warning: #FACC15;
+            --color-error: #EF4444;
+            --color-success-bg: #ECFDF5;
+            --color-warning-bg: #FFFBEB;
+            --color-error-bg: #FEF2F2;
+            
+            /* STAR Analysis Colors */
+            --color-star-situation: #3BA676;
+            --color-star-task: #FACC15;
+            --color-star-action: #EF4444;
+            --color-star-result: #8B5CF6;
+            
+            /* ===== Shadows ===== */
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.04);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.06);
+            --shadow-button-hover: 0 4px 12px rgba(59, 166, 118, 0.3);
+            
+            /* Apple-inspired shadows */
+            --shadow-apple: 0 4px 16px rgba(0, 0, 0, 0.1);
+            --shadow-apple-hover: 0 8px 32px rgba(0, 0, 0, 0.12);
+            --shadow-inset: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            
+            /* ===== Typography Scale ===== */
+            --font-size-sm: clamp(0.8rem, 2vw, 1rem);
+            --font-size-base: clamp(1rem, 3vw, 1.2rem);
+            --font-size-lg: clamp(1.2rem, 4vw, 1.5rem);
+            --font-size-xl: clamp(1.5rem, 5vw, 2rem);
+            
+            /* ===== Spacing Scale ===== */
+            --spacing-xs: clamp(0.25rem, 0.5vw, 0.5rem);
+            --spacing-sm: clamp(0.5rem, 1vw, 1rem);
+            --spacing-md: clamp(1rem, 2vw, 1.5rem);
+            --spacing-lg: clamp(1.5rem, 3vw, 2rem);
+            --spacing-xl: clamp(2rem, 4vw, 3rem);
+            
+            /* ===== Transitions ===== */
+            --transition-fast: 0.1s ease;
+            --transition-normal: 0.2s ease;
+            --transition-slow: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            
+            /* ===== Layout Constants ===== */
+            --header-height: 64px;
+            --max-content-width: 1400px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
+            background: var(--color-background);
+            color: var(--color-text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(249, 250, 251, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            transition: all var(--transition-slow);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 var(--spacing-lg);
+            max-width: var(--max-content-width);
+            margin: 0 auto;
+            height: var(--header-height);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-text-primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .logo i {
+            color: var(--color-primary);
+            font-size: 1.2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color var(--transition-slow);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-text-primary);
+        }
+
+        .nav-cta {
+            background: var(--color-primary);
+            color: var(--color-white);
+            padding: 0.6rem 1.4rem;
+            border: none;
+            border-radius: var(--border-radius-md);
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all var(--transition-slow);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .nav-cta:hover {
+            background: var(--color-primary-dark);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-button-hover);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8rem var(--spacing-lg) 4rem;
+            background: linear-gradient(135deg, var(--color-background) 0%, rgba(59, 166, 118, 0.03) 100%);
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(59, 166, 118, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            z-index: 2;
+            position: relative;
+        }
+
+        .hero-badge {
+            background: var(--color-white);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 50px;
+            padding: 0.5rem 1.2rem;
+            color: var(--color-primary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: var(--shadow-sm);
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            color: var(--color-text-primary);
+            line-height: 1.1;
+            letter-spacing: -0.04em;
+            animation: fadeInUp 0.6s ease-out 0.2s both;
+        }
+
+        .hero .gradient-text {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-star-result) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 3vw, 1.4rem);
+            margin-bottom: 3rem;
+            color: var(--color-text-secondary);
+            line-height: 1.5;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 0.6s ease-out 0.4s both;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.6s ease-out 0.6s both;
+        }
+
+        .primary-button {
+            background: var(--color-primary);
+            color: var(--color-white);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: var(--border-radius-md);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all var(--transition-slow);
+            box-shadow: var(--shadow-apple);
+            min-width: 160px;
+            justify-content: center;
+        }
+
+        .primary-button:hover {
+            background: var(--color-primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-apple-hover);
+        }
+
+        .secondary-button {
+            background: var(--color-white);
+            color: var(--color-text-primary);
+            padding: 1rem 2rem;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: var(--border-radius-md);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all var(--transition-slow);
+            box-shadow: var(--shadow-sm);
+            min-width: 160px;
+            justify-content: center;
+        }
+
+        .secondary-button:hover {
+            background: var(--color-background);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 6rem var(--spacing-lg);
+            background: var(--color-white);
+        }
+
+        .features-container {
+            max-width: var(--max-content-width);
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-eyebrow {
+            color: var(--color-primary);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 6vw, 3rem);
+            font-weight: 700;
+            color: var(--color-text-primary);
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        .section-description {
+            font-size: 1.2rem;
+            color: var(--color-text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .feature-card {
+            background: var(--color-white);
+            padding: 2rem;
+            border-radius: var(--border-radius-lg);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            transition: all var(--transition-slow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-star-result));
+            opacity: 0;
+            transition: opacity var(--transition-slow);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-apple-hover);
+            border-color: rgba(59, 166, 118, 0.2);
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--color-primary);
+            border-radius: var(--border-radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: var(--color-white);
+            font-size: 1.2rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--color-text-primary);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .feature-card p {
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Special STAR feature */
+        .star-feature .feature-icon {
+            background: linear-gradient(135deg, var(--color-star-situation), var(--color-star-result));
+        }
+
+        /* Demo Section */
+        .demo {
+            padding: 6rem var(--spacing-lg);
+            background: var(--color-text-primary);
+            color: var(--color-white);
+            text-align: center;
+        }
+
+        .demo-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .demo h2 {
+            font-size: clamp(2rem, 6vw, 3rem);
+            margin-bottom: 1rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .demo p {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            opacity: 0.8;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .demo-preview {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: var(--border-radius-lg);
+            padding: 3rem;
+            margin-bottom: 3rem;
+            backdrop-filter: blur(10px);
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .demo-preview::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(59, 166, 118, 0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        .demo-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .demo-content i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--color-primary);
+            display: block;
+        }
+
+        .demo-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .demo-content p {
+            opacity: 0.7;
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        .demo-button {
+            background: var(--color-primary);
+            color: var(--color-white);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: var(--border-radius-md);
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all var(--transition-slow);
+            box-shadow: var(--shadow-apple);
+        }
+
+        .demo-button:hover {
+            background: var(--color-primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-apple-hover);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.3;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 0.1;
+            }
+        }
+
+        /* Scroll Animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .primary-button,
+            .secondary-button {
+                width: 100%;
+                max-width: 280px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero {
+                padding: 6rem var(--spacing-md) 3rem;
+            }
+            
+            .features,
+            .demo {
+                padding: 4rem var(--spacing-md);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 5rem var(--spacing-sm) 2rem;
+            }
+            
+            .features,
+            .demo {
+                padding: 3rem var(--spacing-sm);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="#" class="logo">
+                <i class="fas fa-brain"></i>
+                Mockly
+            </a>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#demo">Demo</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+            <a href="#" class="nav-cta" id="nav-cta">
+                Try Demo
+            </a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-sparkles"></i>
+                AI-Powered Interview Coaching
+            </div>
+            <h1>
+                Practice interviews.<br>
+                Perfect your <span class="gradient-text">performance</span>.
+            </h1>
+            <p>
+                Get real-time feedback on your behavioral interview responses using advanced AI analysis. Master the STAR method and land your dream job with confidence.
+            </p>
+            <div class="hero-actions">
+                <a href="#" class="primary-button" id="main-cta">
+                    <i class="fas fa-play"></i>
+                    Start Practicing
+                </a>
+                <a href="#demo" class="secondary-button">
+                    <i class="fas fa-video"></i>
+                    Watch Demo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="features-container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-eyebrow">Advanced AI Technology</div>
+                <h2 class="section-title">Built for success</h2>
+                <p class="section-description">
+                    Experience intelligent interview coaching that adapts to your unique style and provides personalized feedback for continuous improvement.
+                </p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card animate-on-scroll star-feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>STAR Method Analysis</h3>
+                    <p>Advanced AI evaluates your responses using the proven STAR framework, providing detailed feedback on each component for maximum impact.</p>
+                </div>
+                
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>Real-Time Practice</h3>
+                    <p>Record yourself answering questions and receive instant transcription and analysis. See yourself as interviewers see you.</p>
+                </div>
+                
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Instant Feedback</h3>
+                    <p>Get comprehensive scoring and actionable improvement suggestions immediately after each practice session.</p>
+                </div>
+                
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>AI-Powered Insights</h3>
+                    <p>Leverage cutting-edge artificial intelligence to identify patterns in your responses and unlock your full potential.</p>
+                </div>
+                
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Privacy First</h3>
+                    <p>Your practice sessions are completely private and secure. We prioritize your data protection above all else.</p>
+                </div>
+                
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Proven Results</h3>
+                    <p>Join thousands of professionals who have transformed their interview success with our AI-powered coaching platform.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section class="demo" id="demo">
+        <div class="demo-container">
+            <h2>See the future of interview prep</h2>
+            <p>Experience intelligent coaching that evolves with you</p>
+            
+            <div class="demo-preview">
+                <div class="demo-content">
+                    <i class="fas fa-play-circle"></i>
+                    <h3>Interactive Demo</h3>
+                    <p>Try our MVP and experience the power of AI-driven interview coaching</p>
+                </div>
+            </div>
+            
+            <a href="#" class="demo-button" id="demo-cta">
+                <i class="fas fa-rocket"></i>
+                Launch Demo
+            </a>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.borderBottomColor = 'rgba(0, 0, 0, 0.12)';
+            } else {
+                header.style.background = 'rgba(249, 250, 251, 0.8)';
+                header.style.borderBottomColor = 'rgba(0, 0, 0, 0.08)';
+            }
+        });
+
+        // CTA button clicks - redirect to MVP
+        document.getElementById('main-cta').addEventListener('click', (e) => {
+            e.preventDefault();
+            // Replace with your actual MVP URL
+            window.open('https://app.mockly.pro', '_blank');
+        });
+
+        document.getElementById('demo-cta').addEventListener('click', (e) => {
+            e.preventDefault();
+            // Replace with your actual MVP URL
+            window.open('https://app.mockly.pro', '_blank');
+        });
+
+        document.getElementById('nav-cta').addEventListener('click', (e) => {
+            e.preventDefault();
+            // Replace with your actual MVP URL
+            window.open('https://app.mockly.pro', '_blank');
+        });
+
+        // Enhanced interaction effects
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-8px)';
+                card.style.boxShadow = '0 12px 40px rgba(0, 0, 0, 0.15)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+                card.style.boxShadow = '';
+            });
+        });
+
+        // Staggered animation for feature cards
+        const featureCards = document.querySelectorAll('.feature-card');
+        featureCards.forEach((card, index) => {
+            card.style.transitionDelay = `${index * 0.1}s`;
+        });
+    </script>
+</body>
+</html>
