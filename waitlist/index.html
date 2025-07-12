@@ -1,0 +1,2075 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mockly - AI-Powered Interview Practice</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles2.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="#hero" class="logo">
+                <i class="fas fa-brain"></i>
+                Mockly
+            </a>
+            <ul class="nav-links">
+                <li><a href="#how-it-works">Features</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#faq">FAQs</a></li>
+            </ul>
+            <a href="#hero" class="nav-cta" id="nav-cta">
+                Secure My Spot 
+                <i class="fas fa-rocket btn-icon" aria-hidden="true"></i>
+            </a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-sparkles"></i>
+                AI-Powered Interview Coaching
+            </div>
+            <h1>
+                Make Every<br>
+                Answer <span class="gradient-text">Unforgettable</span>.
+            </h1>
+            <p>
+                Get real-time feedback on your behavioral interview responses using advanced AI analysis that tracks your voice, eyes, and gestures. Master the STAR method and land your dream job with confidence.
+            </p>
+            <div class="waitlist-form animate-on-scroll">
+                <form id="waitlist-signup" class="signup-form" novalidate>
+                                                    <div class="form-group">
+                                    <label for="email" class="sr-only">Email address</label>
+                                    <input 
+                                        type="email" 
+                                        id="email" 
+                                        name="email"
+                                        placeholder="Enter your .edu email for student discount"
+                                        required
+                                        autocomplete="off"
+                                        aria-describedby="email-error email-success"
+                                    >
+                                    <i class="fas fa-times-circle validation-icon error" aria-hidden="true"></i>
+                                    <i class="fas fa-check-circle validation-icon success" aria-hidden="true"></i>
+                                    <i class="fas fa-spinner validation-icon validating" aria-hidden="true"></i>
+                                    <div class="validation-progress"></div>
+                                    <div class="validation-tooltip">Enter a valid .edu email for student discount</div>
+                                    
+                                    <div id="email-error" class="error-message" role="alert" aria-live="polite">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                        <span class="error-text"></span>
+                                    </div>
+                                    
+                                    <div id="email-success" class="success-message" role="status" aria-live="polite">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span class="success-text"></span>
+                                    </div>
+                                    
+                                    <div class="email-strength">
+                                        <span class="strength-text">Email validation:</span>
+                                        <div class="strength-indicator">
+                                            <div class="strength-dot" data-check="format"></div>
+                                            <div class="strength-dot" data-check="domain"></div>
+                                            <div class="strength-dot" data-check="edu"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <button type="submit" class="waitlist-btn" id="submit-btn">
+                                        <span class="btn-text">Secure My Spot</span>
+                                        <i class="fas fa-rocket btn-icon" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                    <div class="form-benefits">
+                        <div class="benefit-item">
+                            <i class="fas fa-percent" aria-hidden="true"></i>
+                            <span>25% Pro discount</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-percent" aria-hidden="true"></i>
+                            <span>50% Pro discount for students</span>
+                        </div>
+                    </div>
+                </form>
+                <div class="waitlist-stats" role="status" aria-live="polite">
+                    <span id="waitlist-count">547</span> students already joined • Only <span class="urgency-text">53 spots left</span> for early access
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    
+    <!-- 
+    <!-- Features Section 
+    <section class="features" id="features">
+        <div class="features-container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-eyebrow">Advanced AI Technology</div>
+                <h2 class="section-title">Built for success</h2>
+                <p class="section-description">
+                    Experience intelligent interview coaching that adapts to your unique style and provides personalized feedback for continuous improvement.
+                </p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card animate-on-scroll star-feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>STAR Method Analysis</h3>
+                    <p>Advanced AI evaluates your responses using the proven STAR framework, providing detailed feedback on each component for maximum impact.</p>
+                </div>
+                
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>Multi-Modal Analysis</h3>
+                    <p>Record yourself answering questions while our AI simultaneously analyzes your voice, eye contact, and body language. Get comprehensive feedback on every aspect of your performance.</p>
+                </div>
+                
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Instant Feedback</h3>
+                    <p>Get comprehensive scoring and actionable improvement suggestions immediately after each practice session.</p>
+                </div>
+                
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>AI-Powered Insights</h3>
+                    <p>Leverage cutting-edge artificial intelligence that processes your verbal, visual, and gestural data to identify patterns and provide personalized improvement strategies.</p>
+                </div>
+                
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Privacy First</h3>
+                    <p>Your practice sessions are completely private and secure. We prioritize your data protection above all else.</p>
+                </div>
+                
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Proven Results</h3>
+                    <p>Join thousands of professionals who have transformed their interview success with our AI-powered coaching platform.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    -->
+    
+    <!-- How It Works Section -->
+    <section class="how-it-works section" id="how-it-works">
+        <div class="how-it-works-container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-eyebrow">Advanced AI Analysis</div>
+                <h2 class="section-title">Mockly evaluates every aspect of your interview</h2>
+                <p class="section-description">
+                    Our AI analyzes your complete interview performance through three key channels, giving you the most comprehensive feedback available.
+                </p>
+            </div>
+            
+            <div class="tracking-methods">
+                <div class="tracking-method animate-on-scroll">
+                    <div class="tracking-visual">
+                        <div class="tracking-icon voice-icon">
+                            <i class="fas fa-microphone-alt"></i>
+                            <div class="sound-waves">
+                                <div class="wave wave-1"></div>
+                                <div class="wave wave-2"></div>
+                                <div class="wave wave-3"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tracking-content">
+                        <h3>Voice Analysis</h3>
+                        <p>Advanced speech recognition analyzes your verbal responses for clarity, pace, filler words, and STAR method structure. Get instant feedback on your speaking patterns and content quality.</p>
+                        <div class="tracking-features">
+                            <div class="feature-tag">Speech clarity</div>
+                            <div class="feature-tag">Pace & rhythm</div>
+                            <div class="feature-tag">STAR structure</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tracking-method animate-on-scroll">
+                    <div class="tracking-visual">
+                        <div class="tracking-icon eye-icon">
+                            <i class="fas fa-eye"></i>
+                            <div class="eye-tracker">
+                                <div class="pupil"></div>
+                                <div class="gaze-line"></div>
+                                <div class="focus-point"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tracking-content">
+                        <h3>Eye Tracking</h3>
+                        <p>Monitor your eye contact, gaze patterns, and visual focus to ensure you maintain professional presence. Learn to project confidence through proper eye engagement.</p>
+                        <div class="tracking-features">
+                            <div class="feature-tag">Eye contact</div>
+                            <div class="feature-tag">Gaze stability</div>
+                            <div class="feature-tag">Visual confidence</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tracking-method animate-on-scroll">
+                    <div class="tracking-visual">
+                        <div class="tracking-icon gesture-icon">
+                            <i class="fas fa-hand-paper"></i>
+                            <div class="gesture-tracker">
+                                <div class="hand-outline"></div>
+                                <div class="motion-trail"></div>
+                                <div class="gesture-point"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tracking-content">
+                        <h3>Gesture Analysis</h3>
+                        <p>Track your hand movements, posture, and body language to identify nervous habits and enhance your non-verbal communication. Perfect your professional presence.</p>
+                        <div class="tracking-features">
+                            <div class="feature-tag">Hand gestures</div>
+                            <div class="feature-tag">Posture analysis</div>
+                            <div class="feature-tag">Nervous habits</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="comprehensive-analysis animate-on-scroll">
+                <div class="analysis-header">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Comprehensive Performance Score</h3>
+                </div>
+                <p>All three tracking methods combine to give you a complete interview performance score with actionable insights for improvement.</p>
+                <div class="score-preview">
+                    <div class="score-categories">
+                        <div class="score-category">
+                            <span class="category-label">Verbal</span>
+                            <div class="score-bar">
+                                <div class="score-fill" style="width: 85%;"></div>
+                            </div>
+                            <span class="score-value">85%</span>
+                        </div>
+                        <div class="score-category">
+                            <span class="category-label">Visual</span>
+                            <div class="score-bar">
+                                <div class="score-fill" style="width: 78%;"></div>
+                            </div>
+                            <span class="score-value">78%</span>
+                        </div>
+                        <div class="score-category">
+                            <span class="category-label">Gestures</span>
+                            <div class="score-bar">
+                                <div class="score-fill" style="width: 92%;"></div>
+                            </div>
+                            <span class="score-value">92%</span>
+                        </div>
+                    </div>
+                    <div class="overall-score">
+                        <span class="overall-label">Overall Score</span>
+                        <span class="overall-value">85%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section class="social-proof section" id="testimonials">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2 class="section-title">Join students landing their dream internships</h2>
+                <p class="section-description">See how fellow students transformed their interview game and landed offers at top tech companies</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <article class="testimonial-card animate-on-scroll">
+                    <div class="testimonial-content">
+                        <p>"Finally passed Google's behavioral round after failing it twice. The AI feedback was a game-changer!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar" aria-hidden="true">AK</div>
+                        <div class="author-info">
+                            <h4>Alex Kim</h4>
+                            <span>CS Senior, UC Berkeley → Google SWE Intern</span>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="testimonial-card animate-on-scroll">
+                    <div class="testimonial-content">
+                        <p>"Landed 4 internship offers using Mockly's STAR framework. Worth every penny of my coffee budget!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar" aria-hidden="true">SM</div>
+                        <div class="author-info">
+                            <h4>Sarah Martinez</h4>
+                            <span>Bootcamp Grad → Meta Frontend Intern</span>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="testimonial-card animate-on-scroll">
+                    <div class="testimonial-content">
+                        <p>Went from bombing every 'tell me about a time' question to confidently nailing behavioral rounds."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar" aria-hidden="true">JL</div>
+                        <div class="author-info">
+                            <h4>Jordan Liu</h4>
+                            <span>CS Junior, Stanford → Amazon SDE Intern</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Partner Logos -->
+            <div class="partner-logos animate-on-scroll">
+                <p class="partners-text">Trusted by students from:</p>
+                <div class="logos-container">
+                    <div class="logo-placeholder">UC Berkeley</div>
+                    <div class="logo-placeholder">Stanford</div>
+                    <div class="logo-placeholder">MIT</div>
+                    <div class="logo-placeholder">Carnegie Mellon</div>
+                    <div class="logo-placeholder">Georgia Tech</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Demo Section 
+    <section class="demo" id="demo">
+        <div class="demo-container">
+            <h2>See the future of interview prep</h2>
+            <p>Experience intelligent coaching that evolves with you</p>
+            
+            <div class="demo-preview">
+                <div class="demo-content">
+                    <i class="fas fa-play-circle"></i>
+                    <h3>Interactive Demo</h3>
+                    <p>Try our MVP and experience the power of AI-driven interview coaching</p>
+                </div>
+            </div>
+            
+            <a href="#" class="demo-button" id="demo-cta">
+                <i class="fas fa-rocket"></i>
+                Launch Demo
+            </a>
+        </div>
+    </section>
+    -->
+    <!-- FAQ Section -->
+    <section class="faq-section section" id="faq">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-description">Everything you need to know about joining the waitlist</p>
+            </div>
+            
+            <div class="faq-accordion">
+                <div class="faq-item animate-on-scroll">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-1">
+                        <span>When will Mockly launch?</span>
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </button>
+                    <div class="faq-answer" id="faq-1">
+                        <p>We're launching in early 2024! Waitlist members will get 48-hour early access before our public launch. The countdown timer above shows our current launch target.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item animate-on-scroll">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-2">
+                        <span>What exactly do I get by joining the waitlist?</span>
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </button>
+                    <div class="faq-answer" id="faq-2">
+                        <p>Waitlist members receive: 48-hour early access, 50% discount on lifetime plans, exclusive beta features, priority customer support, and first access to new features as we roll them out.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item animate-on-scroll">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-3">
+                        <span>How much will Mockly cost?</span>
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </button>
+                    <div class="faq-answer" id="faq-3">
+                        <p>Our standard pricing will be $29/month or $199/year. However, the first 500 waitlist members get a lifetime 50% discount, making it just $99/year forever.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item animate-on-scroll">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-4">
+                        <span>Is my data secure on the waitlist?</span>
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </button>
+                    <div class="faq-answer" id="faq-4">
+                        <p>Absolutely. We only collect your email address for launch notifications. We never share your data with third parties and you can unsubscribe at any time. Your privacy is our top priority.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item animate-on-scroll">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-5">
+                        <span>Can I try Mockly before the official launch?</span>
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </button>
+                    <div class="faq-answer" id="faq-5">
+                        <p>Yes! Select waitlist members will be invited to our closed beta testing program starting next month. Beta testers get to try all features for free and help shape the final product.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Final CTA -->
+    <section class="final-cta section">
+        <div class="container">
+            <div class="cta-content animate-on-scroll">
+                <h2>Don't graduate without interview confidence</h2>
+                <p>Join <span id="final-count">547</span> students who are getting ready to ace their interviews</p>
+                <div class="waitlist-form animate-on-scroll">
+                    <form id="final-waitlist-signup" class="signup-form" novalidate>
+                        <div class="form-group">
+                            <label for="final-email" class="sr-only">Email address</label>
+                            <input 
+                                type="email" 
+                                id="final-email"
+                                name="email"
+                                placeholder="Enter your .edu email for student discount"
+                                required
+                                autocomplete="off"
+                                aria-describedby="final-email-error final-email-success"
+                            >
+                            <i class="fas fa-times-circle validation-icon error" aria-hidden="true"></i>
+                            <i class="fas fa-check-circle validation-icon success" aria-hidden="true"></i>
+                            <i class="fas fa-spinner validation-icon validating" aria-hidden="true"></i>
+                            <div class="validation-progress"></div>
+                            <div class="validation-tooltip">Enter a valid .edu email for student discount</div>
+                            
+                            <div id="final-email-error" class="error-message" role="alert" aria-live="polite">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <span class="error-text"></span>
+                            </div>
+                            
+                            <div id="final-email-success" class="success-message" role="status" aria-live="polite">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="success-text"></span>
+                            </div>
+                            
+                            <div class="email-strength">
+                                <span class="strength-text">Email validation:</span>
+                                <div class="strength-indicator">
+                                    <div class="strength-dot" data-check="format"></div>
+                                    <div class="strength-dot" data-check="domain"></div>
+                                    <div class="strength-dot" data-check="edu"></div>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="waitlist-btn" id="final-submit-btn">
+                                <span class="btn-text">Secure My Spot</span>
+                                <i class="fas fa-rocket btn-icon" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="form-benefits">
+                            <div class="benefit-item">
+                                <i class="fas fa-percent" aria-hidden="true"></i>
+                                <span>25% Pro discount</span>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-percent" aria-hidden="true"></i>
+                                <span>50% Pro discount for students</span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <p class="security-note">
+                    <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                    Student-only pricing. No spam, just interview wins.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="built-by">
+                    Built with <span class="heart">❤️</span> by students at 
+                    <span class="university">CMU</span>, 
+                    <span class="university">Caltech</span>, 
+                    <span class="university">UT Austin</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Thank You Popup Modal -->
+    <div id="thankYouModal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <i class="fas fa-check-circle success-icon"></i>
+                <h2>Thank You!</h2>
+            </div>
+            <div class="modal-body">
+                <p>You've successfully joined the waitlist!</p>
+                <p>We'll send updates to:</p>
+                <div class="email-display">
+                    <i class="fas fa-envelope"></i>
+                    <span id="confirmedEmail"></span>
+                </div>
+                <p class="modal-note">Check your email for confirmation and exclusive updates.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-close-btn" onclick="closeThankYouModal()">
+                    <span>Got it!</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <style>
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(5px);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .modal-overlay.show {
+            opacity: 1;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 16px;
+            max-width: 400px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            transform: scale(0.8) translateY(20px);
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        
+        .modal-overlay.show .modal-content {
+            transform: scale(1) translateY(0);
+        }
+        
+        .modal-header {
+            text-align: center;
+            padding: 2rem 2rem 1rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .success-icon {
+            color: #10b981;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: bounceIn 0.6s ease;
+        }
+        
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0.3);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            70% {
+                transform: scale(0.9);
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        
+        .modal-header h2 {
+            margin: 0;
+            color: #1f2937;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .modal-body {
+            padding: 1.5rem 2rem;
+            text-align: center;
+        }
+        
+        .modal-body p {
+            color: #6b7280;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .email-display {
+            background: #f8fafc;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-weight: 500;
+            color: #1f2937;
+        }
+        
+        .email-display i {
+            color: #6366f1;
+        }
+        
+        .modal-note {
+            font-size: 0.9rem;
+            color: #9ca3af;
+            margin-top: 1rem;
+        }
+        
+        .modal-footer {
+            padding: 1rem 2rem 2rem;
+            text-align: center;
+        }
+        
+        .modal-close-btn {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            color: white;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1rem;
+        }
+        
+        .modal-close-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+        }
+        
+        .modal-close-btn:active {
+            transform: translateY(0);
+        }
+        
+        /* Responsive modal */
+        @media (max-width: 480px) {
+            .modal-content {
+                width: 95%;
+                margin: 1rem;
+            }
+            
+            .modal-header,
+            .modal-body,
+            .modal-footer {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+        }
+        
+        /* Footer Styles */
+        .site-footer {
+            background: #f8fafc;
+            border-top: 1px solid #e5e7eb;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+        
+        .footer-content {
+            text-align: center;
+        }
+        
+        .built-by {
+            color: #6b7280;
+            font-size: 0.9rem;
+            margin: 0;
+            font-weight: 500;
+        }
+        
+        .heart {
+            color: #ef4444;
+            font-size: 1rem;
+            animation: heartbeat 2s ease-in-out infinite;
+            display: inline-block;
+        }
+        
+        .university {
+            color: #374151;
+            font-weight: 600;
+            position: relative;
+        }
+        
+        .university:hover {
+            color: #6366f1;
+            transition: color 0.3s ease;
+        }
+        
+        @keyframes heartbeat {
+            0% {
+                transform: scale(1);
+            }
+            14% {
+                transform: scale(1.1);
+            }
+            28% {
+                transform: scale(1);
+            }
+            42% {
+                transform: scale(1.1);
+            }
+            70% {
+                transform: scale(1);
+            }
+        }
+        
+        /* Responsive footer */
+        @media (max-width: 640px) {
+            .site-footer {
+                padding: 1.5rem 0;
+                margin-top: 2rem;
+            }
+            
+            .built-by {
+                font-size: 0.85rem;
+                line-height: 1.6;
+            }
+        }
+
+        /* How It Works Section Styles */
+        .how-it-works {
+            background: linear-gradient(135deg, #f8fafc 0%, #e5e7eb 100%);
+            padding: 5rem 0;
+            margin: 0 0 2rem 0;
+        }
+        
+        .how-it-works-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .tracking-methods {
+            display: flex;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .tracking-method {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 1.5rem;
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+            flex: 1;
+        }
+        
+        .tracking-method:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+        
+        .tracking-visual {
+            flex-shrink: 0;
+            width: 120px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .tracking-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .voice-icon {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        }
+        
+        .eye-icon {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+        }
+        
+        .gesture-icon {
+            background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+        }
+        
+        /* Animated elements */
+        .sound-waves {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+        
+        .wave {
+            position: absolute;
+            border: 2px solid #10b981;
+            border-radius: 50%;
+            opacity: 0;
+            animation: soundWave 2s infinite;
+        }
+        
+        .wave-1 {
+            width: 100px;
+            height: 100px;
+            margin-left: -50px;
+            margin-top: -50px;
+        }
+        
+        .wave-2 {
+            width: 120px;
+            height: 120px;
+            margin-left: -60px;
+            margin-top: -60px;
+            animation-delay: 0.3s;
+        }
+        
+        .wave-3 {
+            width: 140px;
+            height: 140px;
+            margin-left: -70px;
+            margin-top: -70px;
+            animation-delay: 0.6s;
+        }
+        
+        @keyframes soundWave {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.3;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 0;
+            }
+        }
+        
+        .eye-tracker {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+        
+        .pupil {
+            width: 8px;
+            height: 8px;
+            background: #3b82f6;
+            border-radius: 50%;
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            animation: eyeMove 3s infinite;
+        }
+        
+        .gaze-line {
+            width: 2px;
+            height: 40px;
+            background: #3b82f6;
+            position: absolute;
+            top: 10px;
+            left: -1px;
+            opacity: 0.5;
+            animation: gazeLine 3s infinite;
+        }
+        
+        .focus-point {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #3b82f6;
+            border-radius: 50%;
+            position: absolute;
+            top: 45px;
+            left: -10px;
+            animation: focusPoint 3s infinite;
+        }
+        
+        @keyframes eyeMove {
+            0%, 100% { transform: translate(0, 0); }
+            25% { transform: translate(10px, -5px); }
+            50% { transform: translate(-8px, 8px); }
+            75% { transform: translate(5px, -10px); }
+        }
+        
+        @keyframes gazeLine {
+            0%, 100% { opacity: 0.5; transform: rotate(0deg); }
+            25% { opacity: 0.8; transform: rotate(15deg); }
+            50% { opacity: 0.3; transform: rotate(-10deg); }
+            75% { opacity: 0.7; transform: rotate(8deg); }
+        }
+        
+        @keyframes focusPoint {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 0.8; }
+        }
+        
+        .gesture-tracker {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+        
+        .hand-outline {
+            width: 30px;
+            height: 35px;
+            border: 2px solid #8b5cf6;
+            border-radius: 8px 8px 12px 12px;
+            position: absolute;
+            top: -17px;
+            left: -15px;
+            animation: handGesture 2.5s infinite;
+        }
+        
+        .motion-trail {
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #8b5cf6, transparent);
+            position: absolute;
+            top: 0;
+            left: -25px;
+            animation: motionTrail 2.5s infinite;
+        }
+        
+        .gesture-point {
+            width: 8px;
+            height: 8px;
+            background: #8b5cf6;
+            border-radius: 50%;
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            animation: gesturePoint 2.5s infinite;
+        }
+        
+        @keyframes handGesture {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(15px, -10px) rotate(10deg); }
+            50% { transform: translate(-10px, 15px) rotate(-5deg); }
+            75% { transform: translate(8px, -5px) rotate(15deg); }
+        }
+        
+        @keyframes motionTrail {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 0.6; }
+        }
+        
+        @keyframes gesturePoint {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.5); opacity: 1; }
+        }
+        
+        @keyframes highlightEmail {
+            0% { 
+                box-shadow: 0 0 0 3px rgba(99, 102, 241, 0);
+                transform: scale(1);
+            }
+            25% { 
+                box-shadow: 0 0 0 6px rgba(99, 102, 241, 0.4);
+                transform: scale(1.02);
+            }
+            50% { 
+                box-shadow: 0 0 0 8px rgba(99, 102, 241, 0.2);
+                transform: scale(1.02);
+            }
+            75% { 
+                box-shadow: 0 0 0 6px rgba(99, 102, 241, 0.1);
+                transform: scale(1.01);
+            }
+            100% { 
+                box-shadow: 0 0 0 3px rgba(99, 102, 241, 0);
+                transform: scale(1);
+            }
+        }
+        
+        .tracking-content {
+            flex: 1;
+        }
+        
+        .tracking-content h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+        
+        .tracking-content p {
+            color: #6b7280;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .tracking-features {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .feature-tag {
+            background: #f3f4f6;
+            color: #374151;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            border: 1px solid #e5e7eb;
+        }
+        
+        .comprehensive-analysis {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            margin-top: 3rem;
+            border: 1px solid #e5e7eb;
+        }
+        
+        .analysis-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .analysis-header i {
+            font-size: 1.5rem;
+            color: #6366f1;
+        }
+        
+        .analysis-header h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin: 0;
+        }
+        
+        .comprehensive-analysis p {
+            color: #6b7280;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+        
+        .score-preview {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .score-categories {
+            flex: 1;
+            display: grid;
+            gap: 1rem;
+        }
+        
+        .score-category {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .category-label {
+            min-width: 80px;
+            font-weight: 500;
+            color: #374151;
+        }
+        
+        .score-bar {
+            flex: 1;
+            height: 8px;
+            background: #e5e7eb;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .score-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #10b981 0%, #059669 100%);
+            border-radius: 4px;
+            width: 0 !important;
+            transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .score-fill.animate {
+            width: var(--target-width) !important;
+        }
+        
+        .score-value {
+            min-width: 40px;
+            font-weight: 600;
+            color: #1f2937;
+            transition: transform 0.3s ease;
+        }
+        
+        .overall-score {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            border-radius: 12px;
+            color: white;
+            text-align: center;
+            min-width: 120px;
+        }
+        
+        .overall-label {
+            font-size: 0.875rem;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+        
+        .overall-value {
+            font-size: 2rem;
+            font-weight: 700;
+            transition: transform 0.3s ease;
+        }
+        
+        .score-value {
+            min-width: 40px;
+            font-weight: 600;
+            color: #1f2937;
+            transition: transform 0.3s ease;
+        }
+        
+        .score-value.counting,
+        .overall-value.counting {
+            transform: scale(1.1);
+        }
+        
+        /* Counter Animation Effects */
+        @keyframes counterPulse {
+            0% {
+                transform: scale(1);
+                color: inherit;
+            }
+            50% {
+                transform: scale(1.05);
+                color: #6366f1;
+            }
+            100% {
+                transform: scale(1);
+                color: inherit;
+            }
+        }
+        
+        @keyframes counterGlow {
+            0% {
+                box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 0 8px rgba(99, 102, 241, 0.1);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(99, 102, 241, 0);
+            }
+        }
+        
+        .counter-updating {
+            animation: counterPulse 1s ease-in-out;
+        }
+        
+        .waitlist-stats {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .waitlist-stats.updating {
+            animation: counterGlow 1.5s ease-in-out;
+        }
+        
+        #waitlist-count, #final-count {
+            display: inline-block;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            padding: 0 2px;
+            border-radius: 4px;
+        }
+        
+        .urgency-text {
+            display: inline-block;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            color: #ef4444;
+            padding: 0 2px;
+            border-radius: 4px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .how-it-works-container {
+                padding: 0 1.5rem;
+            }
+            
+            .tracking-methods {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            
+            .tracking-method {
+                flex: none;
+            }
+            
+            .score-preview {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
+            .overall-score {
+                min-width: 100px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .how-it-works {
+                padding: 3rem 0;
+            }
+            
+            .how-it-works-container {
+                padding: 0 1rem;
+            }
+            
+            .tracking-method {
+                padding: 1.5rem;
+            }
+            
+            .comprehensive-analysis {
+                padding: 2rem;
+            }
+        }
+    </style>
+    
+    <script>
+        // Modal functions
+        function showThankYouModal(email) {
+            const modal = document.getElementById('thankYouModal');
+            const emailDisplay = document.getElementById('confirmedEmail');
+            
+            emailDisplay.textContent = email;
+            modal.style.display = 'flex';
+            
+            // Force reflow and add show class for animation
+            setTimeout(() => {
+                modal.classList.add('show');
+            }, 10);
+        }
+        
+        function closeThankYouModal() {
+            const modal = document.getElementById('thankYouModal');
+            modal.classList.remove('show');
+            
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 300);
+        }
+        
+        // Close modal when clicking outside
+        document.addEventListener('click', function(e) {
+            const modal = document.getElementById('thankYouModal');
+            if (e.target === modal) {
+                closeThankYouModal();
+            }
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeThankYouModal();
+            }
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    
+                    // Check if this is the comprehensive analysis section
+                    if (entry.target.classList.contains('comprehensive-analysis')) {
+                        // Trigger score animations after a short delay
+                        setTimeout(() => {
+                            animateScoreSection();
+                        }, 500);
+                    }
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.borderBottomColor = 'rgba(0, 0, 0, 0.12)';
+            } else {
+                header.style.background = 'rgba(249, 250, 251, 0.8)';
+                header.style.borderBottomColor = 'rgba(0, 0, 0, 0.08)';
+            }
+        });
+
+        // CTA button clicks - redirect to MVP
+        const mainCta = document.getElementById('main-cta');
+        if (mainCta) {
+            mainCta.addEventListener('click', (e) => {
+                e.preventDefault();
+                // Replace with your actual MVP URL
+                window.open('https://app.mockly.pro', '_blank');
+            });
+        }
+
+        const demoCta = document.getElementById('demo-cta');
+        if (demoCta) {
+            demoCta.addEventListener('click', (e) => {
+                e.preventDefault();
+                // Replace with your actual MVP URL
+                window.open('https://app.mockly.pro', '_blank');
+            });
+        }
+
+        const navCta = document.getElementById('nav-cta');
+        if (navCta) {
+            navCta.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // Scroll to hero section
+                const heroSection = document.querySelector('#hero');
+                if (heroSection) {
+                    heroSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    // Focus and highlight the email input after scroll
+                    setTimeout(() => {
+                        const emailInput = document.getElementById('email');
+                        if (emailInput) {
+                            emailInput.focus();
+                            emailInput.select();
+                            
+                            // Add a subtle highlight animation
+                            emailInput.style.animation = 'highlightEmail 2s ease-in-out';
+                            setTimeout(() => {
+                                emailInput.style.animation = '';
+                            }, 2000);
+                        }
+                    }, 800); // Wait for scroll to complete
+                }
+            });
+        }
+
+        // Enhanced interaction effects
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-8px)';
+                card.style.boxShadow = '0 12px 40px rgba(0, 0, 0, 0.15)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+                card.style.boxShadow = '';
+            });
+        });
+
+        // Staggered animation for feature cards
+        const featureCards = document.querySelectorAll('.feature-card');
+        featureCards.forEach((card, index) => {
+            card.style.transitionDelay = `${index * 0.1}s`;
+        });
+
+        // FAQ Accordion functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.closest('.faq-item');
+                const answer = faqItem.querySelector('.faq-answer');
+                const isExpanded = question.getAttribute('aria-expanded') === 'true';
+                
+                // Close all other FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (item !== faqItem) {
+                        const otherQuestion = item.querySelector('.faq-question');
+                        const otherAnswer = item.querySelector('.faq-answer');
+                        otherQuestion.setAttribute('aria-expanded', 'false');
+                        otherAnswer.classList.remove('active');
+                        item.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current item
+                if (isExpanded) {
+                    question.setAttribute('aria-expanded', 'false');
+                    answer.classList.remove('active');
+                    faqItem.classList.remove('active');
+                } else {
+                    question.setAttribute('aria-expanded', 'true');
+                    answer.classList.add('active');
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+
+        // Enhanced Email Validation System
+        class EmailValidator {
+            constructor() {
+                this.emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                this.eduRegex = /^[^\s@]+@[^\s@]+\.edu$/;
+                this.commonDomains = ['gmail.com', 'yahoo.com', 'outlook.com', 'hotmail.com'];
+                this.validationTimer = null;
+            }
+
+                         validateEmail(email) {
+                 console.log('Validating email:', email); // Debug log
+                 
+                 const validation = {
+                     isValid: false,
+                     isEdu: false,
+                     hasValidFormat: false,
+                     hasValidDomain: false,
+                     errors: [],
+                     suggestions: []
+                 };
+
+                 // Check format
+                 if (this.emailRegex.test(email)) {
+                     validation.hasValidFormat = true;
+                     
+                     // Check domain
+                     const domain = email.split('@')[1];
+                     if (domain && domain.length > 1) {
+                         validation.hasValidDomain = true;
+                         
+                         // Check for .edu
+                         if (this.eduRegex.test(email)) {
+                             validation.isEdu = true;
+                         }
+                     }
+                 }
+
+                 // Generate errors and suggestions
+                 if (!validation.hasValidFormat) {
+                     validation.errors.push('Please enter a valid email format');
+                 } else if (!validation.hasValidDomain) {
+                     validation.errors.push('Please enter a valid domain');
+                 } else if (!validation.isEdu && email.includes('@')) {
+                     validation.suggestions.push('Use your .edu email for student discount');
+                 }
+
+                 validation.isValid = validation.hasValidFormat && validation.hasValidDomain;
+                 console.log('Validation result:', validation); // Debug log
+                 return validation;
+             }
+
+                         updateStrengthIndicator(validation, container) {
+                 const dots = container.querySelectorAll('.strength-dot');
+                 
+                 // If there's any validation error, set all dots to 0 (inactive)
+                 if (!validation.isValid) {
+                     dots.forEach(dot => {
+                         dot.classList.remove('active', 'error');
+                     });
+                     return;
+                 }
+                 
+                 // Only show progress if email is valid
+                 // Format check
+                 if (validation.hasValidFormat) {
+                     dots[0].classList.add('active');
+                     dots[0].classList.remove('error');
+                 } else {
+                     dots[0].classList.remove('active', 'error');
+                 }
+
+                 // Domain check
+                 if (validation.hasValidDomain) {
+                     dots[1].classList.add('active');
+                     dots[1].classList.remove('error');
+                 } else {
+                     dots[1].classList.remove('active', 'error');
+                 }
+
+                 // .edu check (optional - shows progress but not error)
+                 if (validation.isEdu) {
+                     dots[2].classList.add('active');
+                     dots[2].classList.remove('error');
+                 } else {
+                     dots[2].classList.remove('active', 'error');
+                 }
+             }
+
+                         showValidationMessage(type, message, container) {
+                 console.log('Showing validation message:', type, message); // Debug log
+                 
+                 const errorEl = container.querySelector('.error-message');
+                 const successEl = container.querySelector('.success-message');
+
+                 if (type === 'error') {
+                     errorEl.querySelector('.error-text').textContent = message;
+                     errorEl.classList.add('show');
+                     successEl.classList.remove('show');
+                 } else if (type === 'success') {
+                     successEl.querySelector('.success-text').textContent = message;
+                     successEl.classList.add('show');
+                     errorEl.classList.remove('show');
+                 } else {
+                     errorEl.classList.remove('show');
+                     successEl.classList.remove('show');
+                 }
+             }
+        }
+
+        const validator = new EmailValidator();
+        console.log('EmailValidator initialized:', validator); // Debug log
+
+                 // Enhanced form validation for main waitlist form
+         function setupFormValidation(formId, emailId) {
+             const form = document.getElementById(formId);
+             const email = document.getElementById(emailId);
+             
+             if (!form || !email) {
+                 console.error('Form or email element not found:', formId, emailId);
+                 return;
+             }
+             
+             const formGroup = email.closest('.form-group');
+             const submitBtn = form.querySelector('button[type="submit"]');
+             
+             if (!formGroup || !submitBtn) {
+                 console.error('Form group or submit button not found for:', formId);
+                 return;
+             }
+             
+             let validationTimeout;
+             let hasBeenTouched = false;
+             let hasBeenBlurred = false;
+
+             // Track when user starts interacting
+             email.addEventListener('focus', function() {
+                 hasBeenTouched = true;
+             });
+
+             // Track when user leaves the field
+             email.addEventListener('blur', function() {
+                 if (hasBeenTouched) {
+                     hasBeenBlurred = true;
+                     // Validate on blur only if user has typed something
+                     if (email.value.length > 0) {
+                         validateField();
+                     }
+                 }
+             });
+
+             function validateField() {
+                 clearTimeout(validationTimeout);
+                 
+                 // Clear previous states
+                 email.classList.remove('error', 'success', 'validating');
+                 
+                 if (email.value.length > 0) {
+                     // Show validating state
+                     email.classList.add('validating');
+                     
+                     // Debounce validation
+                     validationTimeout = setTimeout(() => {
+                         const validation = validator.validateEmail(email.value);
+                         
+                         email.classList.remove('validating');
+                         
+                         if (validation.isValid) {
+                             email.classList.add('success');
+                             
+                             if (validation.isEdu) {
+                                 validator.showValidationMessage('success', 'Perfect! You\'ll get student pricing', formGroup);
+                             } else {
+                                 validator.showValidationMessage('success', 'Valid email - consider using .edu for discount', formGroup);
+                             }
+                         } else if (hasBeenBlurred || hasBeenTouched) {
+                             // Only show errors after user has interacted and left the field
+                             email.classList.add('error');
+                             const errorMessage = validation.errors[0] || 'Please enter a valid email address';
+                             validator.showValidationMessage('error', errorMessage, formGroup);
+                         }
+                         
+                         // Update strength indicator if present
+                         if (formGroup.querySelector('.strength-indicator')) {
+                             validator.updateStrengthIndicator(validation, formGroup);
+                         }
+                     }, 300);
+                 } else {
+                     // Clear messages when field is empty
+                     validator.showValidationMessage('clear', '', formGroup);
+                     
+                     // Reset strength indicator when empty
+                     if (formGroup.querySelector('.strength-indicator')) {
+                         formGroup.querySelectorAll('.strength-dot').forEach(dot => {
+                             dot.classList.remove('active', 'error');
+                         });
+                     }
+                 }
+             }
+
+             // Real-time validation on input (but more conservative)
+             email.addEventListener('input', function() {
+                 // Only validate in real-time if user has already blurred the field at least once
+                 if (hasBeenBlurred && email.value.length > 2) {
+                     validateField();
+                 } else if (email.value.length === 0) {
+                     // Clear everything when empty
+                     email.classList.remove('error', 'success', 'validating');
+                     validator.showValidationMessage('clear', '', formGroup);
+                     
+                     if (formGroup.querySelector('.strength-indicator')) {
+                         formGroup.querySelectorAll('.strength-dot').forEach(dot => {
+                             dot.classList.remove('active', 'error');
+                         });
+                     }
+                 }
+             });
+
+            // Enhanced form submission
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                console.log('Form submitted with email:', email.value); // Debug log
+                
+                const validation = validator.validateEmail(email.value);
+                console.log('Email validation result:', validation); // Debug log
+                
+                if (!validation.isValid) {
+                    email.classList.add('error');
+                    email.focus();
+                    
+                    // Show error message on submit
+                    const errorMessage = validation.errors[0] || 'Please enter a valid email address';
+                    validator.showValidationMessage('error', errorMessage, formGroup);
+                    
+                    // Update strength indicator
+                    if (formGroup.querySelector('.strength-indicator')) {
+                        validator.updateStrengthIndicator(validation, formGroup);
+                    }
+                    
+                    // Animate form to show error
+                    form.style.animation = 'shake 0.5s ease-in-out';
+                    setTimeout(() => {
+                        form.style.animation = '';
+                    }, 500);
+                    
+                    return;
+                }
+                
+                // Show loading state
+                submitBtn.classList.add('loading');
+                email.disabled = true;
+                
+                // Send email to Formspree
+                fetch('https://formspree.io/f/mdkdnoag', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        email: email.value,
+                        isEdu: validation.isEdu,
+                        source: formId,
+                        timestamp: new Date().toISOString()
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Success state
+                    submitBtn.classList.remove('loading');
+                    email.disabled = false;
+                    
+                    // Increment the counter for actual signups
+                    if (window.waitlistCounter) {
+                        window.waitlistCounter.handleNewSignup();
+                    }
+                    
+                    // Show thank you popup with the email
+                    showThankYouModal(email.value);
+                    
+                    // Reset form immediately after showing popup
+                    setTimeout(() => {
+                        email.value = '';
+                        email.classList.remove('success', 'error');
+                        validator.showValidationMessage('clear', '', formGroup);
+                        
+                        // Reset strength indicator
+                        if (formGroup.querySelector('.strength-indicator')) {
+                            formGroup.querySelectorAll('.strength-dot').forEach(dot => {
+                                dot.classList.remove('active', 'error');
+                            });
+                        }
+                    }, 500);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    submitBtn.classList.remove('loading');
+                    email.disabled = false;
+                    validator.showValidationMessage('error', 'Something went wrong. Please try again.', formGroup);
+                });
+            });
+        }
+
+
+
+        // Score Animation Functions
+        function animateScore(element, startValue, endValue, duration = 1500) {
+            const startTime = performance.now();
+            element.classList.add('counting');
+            
+            function updateScore(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                
+                // Use easing function for smooth animation
+                const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+                const currentValue = Math.round(startValue + (endValue - startValue) * easeOutQuart);
+                
+                element.textContent = currentValue + '%';
+                
+                if (progress < 1) {
+                    requestAnimationFrame(updateScore);
+                } else {
+                    element.classList.remove('counting');
+                }
+            }
+            
+            requestAnimationFrame(updateScore);
+        }
+        
+        function animateScoreSection() {
+            const scoreSection = document.querySelector('.comprehensive-analysis');
+            if (!scoreSection || scoreSection.dataset.animated === 'true') return;
+            
+            // Mark as animated to prevent repeated animations
+            scoreSection.dataset.animated = 'true';
+            
+            // Get all score elements
+            const scoreCategories = scoreSection.querySelectorAll('.score-category');
+            const overallScore = scoreSection.querySelector('.overall-value');
+            
+            // Animate each score bar and number
+            scoreCategories.forEach((category, index) => {
+                const scoreFill = category.querySelector('.score-fill');
+                const scoreValue = category.querySelector('.score-value');
+                
+                if (scoreFill && scoreValue) {
+                    // Get target percentage from the score value text
+                    const targetPercentage = parseInt(scoreValue.textContent);
+                    
+                    // Set CSS custom property for the bar animation
+                    scoreFill.style.setProperty('--target-width', targetPercentage + '%');
+                    
+                    // Animate the progress bar with a delay
+                    setTimeout(() => {
+                        scoreFill.classList.add('animate');
+                    }, index * 200);
+                    
+                    // Animate the number with a slight delay after the bar starts
+                    setTimeout(() => {
+                        animateScore(scoreValue, 0, targetPercentage, 1200);
+                    }, index * 200 + 400);
+                }
+            });
+            
+            // Animate overall score
+            if (overallScore) {
+                const targetValue = parseInt(overallScore.textContent);
+                setTimeout(() => {
+                    animateScore(overallScore, 0, targetValue, 1500);
+                }, 800);
+            }
+        }
+        
+        // Dynamic Counter System
+        class WaitlistCounter {
+            constructor() {
+                this.baseCount = 547;
+                this.maxCount = 1000;
+                this.incrementInterval = 45000; // 45 seconds
+                this.storageKey = 'mockly_waitlist_count';
+                this.lastUpdateKey = 'mockly_waitlist_last_update';
+                
+                this.init();
+            }
+            
+            init() {
+                // Get stored count or use base count
+                const stored = this.getStoredCount();
+                this.currentCount = stored.count;
+                this.lastUpdate = stored.lastUpdate;
+                
+                // Update displays
+                this.updateCounterDisplays();
+                
+                // Start periodic updates
+                this.startPeriodicUpdates();
+                
+                // Update on page focus (simulate activity when user returns)
+                document.addEventListener('visibilitychange', () => {
+                    if (!document.hidden) {
+                        this.handlePageFocus();
+                    }
+                });
+            }
+            
+            getStoredCount() {
+                try {
+                    const stored = localStorage.getItem(this.storageKey);
+                    const lastUpdate = localStorage.getItem(this.lastUpdateKey);
+                    
+                    if (stored && lastUpdate) {
+                        const timeSinceUpdate = Date.now() - parseInt(lastUpdate);
+                        const periodsElapsed = Math.floor(timeSinceUpdate / this.incrementInterval);
+                        
+                        // Calculate natural growth during absence
+                        const baseCount = Math.min(
+                            parseInt(stored) + periodsElapsed,
+                            this.maxCount
+                        );
+                        
+                        return {
+                            count: baseCount,
+                            lastUpdate: parseInt(lastUpdate)
+                        };
+                    }
+                } catch (e) {
+                    console.warn('Could not retrieve stored count:', e);
+                }
+                
+                return {
+                    count: this.baseCount,
+                    lastUpdate: Date.now()
+                };
+            }
+            
+            updateStoredCount() {
+                try {
+                    localStorage.setItem(this.storageKey, this.currentCount.toString());
+                    localStorage.setItem(this.lastUpdateKey, Date.now().toString());
+                } catch (e) {
+                    console.warn('Could not store count:', e);
+                }
+            }
+            
+            incrementCount() {
+                if (this.currentCount < this.maxCount) {
+                    // Simulate realistic growth patterns
+                    const hour = new Date().getHours();
+                    const isBusinessHours = hour >= 9 && hour <= 17;
+                    const baseChance = isBusinessHours ? 0.7 : 0.3;
+                    
+                    // Add some randomness to make it feel natural
+                    if (Math.random() < baseChance) {
+                        const increment = Math.random() < 0.8 ? 1 : Math.random() < 0.9 ? 2 : 3;
+                        this.currentCount = Math.min(this.currentCount + increment, this.maxCount);
+                        this.updateCounterDisplays();
+                        this.updateStoredCount();
+                    }
+                }
+            }
+            
+            updateCounterDisplays() {
+                const waitlistCount = document.getElementById('waitlist-count');
+                const finalCount = document.getElementById('final-count');
+                const spotsLeft = document.querySelector('.urgency-text');
+                
+                if (waitlistCount) {
+                    this.animateCounterUpdate(waitlistCount, this.currentCount);
+                }
+                
+                if (finalCount) {
+                    this.animateCounterUpdate(finalCount, this.currentCount);
+                }
+                
+                if (spotsLeft) {
+                    const remainingSpots = Math.max(1, 600 - this.currentCount);
+                    spotsLeft.textContent = `${remainingSpots} spots left`;
+                }
+            }
+            
+            animateCounterUpdate(element, newValue) {
+                const currentValue = parseInt(element.textContent) || 0;
+                if (currentValue === newValue) return;
+                
+                // Add visual effects
+                element.classList.add('counter-updating');
+                const statsContainer = document.querySelector('.waitlist-stats');
+                if (statsContainer) {
+                    statsContainer.classList.add('updating');
+                }
+                
+                const duration = 1500;
+                const startTime = performance.now();
+                
+                function updateNumber(currentTime) {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    
+                    const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+                    const currentDisplayValue = Math.round(currentValue + (newValue - currentValue) * easeOutQuart);
+                    
+                    element.textContent = currentDisplayValue;
+                    
+                    if (progress < 1) {
+                        requestAnimationFrame(updateNumber);
+                    } else {
+                        // Remove animation classes when done
+                        element.classList.remove('counter-updating');
+                        if (statsContainer) {
+                            statsContainer.classList.remove('updating');
+                        }
+                    }
+                }
+                
+                requestAnimationFrame(updateNumber);
+            }
+            
+            startPeriodicUpdates() {
+                // Initial random delay to stagger updates
+                const initialDelay = Math.random() * 30000; // 0-30 seconds
+                
+                setTimeout(() => {
+                    this.incrementCount();
+                    
+                    // Set up regular intervals
+                    setInterval(() => {
+                        this.incrementCount();
+                    }, this.incrementInterval);
+                }, initialDelay);
+            }
+            
+            handlePageFocus() {
+                // Simulate some activity when user returns to page
+                const timeSinceLastUpdate = Date.now() - this.lastUpdate;
+                if (timeSinceLastUpdate > 60000) { // If away for more than 1 minute
+                    // Small chance of increment when returning
+                    if (Math.random() < 0.3) {
+                        this.incrementCount();
+                    }
+                }
+            }
+            
+            // Method to manually increment (call this when someone actually signs up)
+            handleNewSignup() {
+                this.currentCount++;
+                this.updateCounterDisplays();
+                this.updateStoredCount();
+            }
+        }
+
+        // Initialize everything when DOM is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded, initializing form validation...'); // Debug log
+            
+            // Initialize dynamic counter
+            window.waitlistCounter = new WaitlistCounter();
+            
+            // Initialize main form validation
+            try {
+                setupFormValidation('waitlist-signup', 'email');
+                console.log('Main form validation initialized'); // Debug log
+            } catch (error) {
+                console.error('Error initializing main form:', error);
+            }
+            
+            // Initialize final form validation
+            try {
+                setupFormValidation('final-waitlist-signup', 'final-email');
+                console.log('Final form validation initialized'); // Debug log
+            } catch (error) {
+                console.error('Error initializing final form:', error);
+            }
+            
+            // Add paste event handling for better UX
+            document.querySelectorAll('input[type="email"]').forEach(input => {
+                input.addEventListener('paste', function(e) {
+                    setTimeout(() => {
+                        input.dispatchEvent(new Event('input'));
+                    }, 10);
+                });
+            });
+
+            // Add keyboard shortcuts
+            document.addEventListener('keydown', function(e) {
+                if (e.ctrlKey && e.key === 'Enter') {
+                    const activeEmail = document.activeElement;
+                    if (activeEmail.type === 'email') {
+                        const form = activeEmail.closest('form');
+                        if (form) {
+                            form.requestSubmit();
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
