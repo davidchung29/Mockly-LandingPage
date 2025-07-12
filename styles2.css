@@ -1237,36 +1237,36 @@ nav {
 }
 
 .final-cta .form-group input[type="email"]::placeholder {
-    color: rgba(255, 255, 255, 0.8);
-}
-
-.final-cta .validation-icon {
-    color: rgba(255, 255, 255, 0.6);
-}
-
-.final-cta .email-strength {
-    color: rgba(255, 255, 255, 0.7);
-}
-
-.final-cta .strength-dot {
-    background: rgba(255, 255, 255, 0.3);
-}
-
-.final-cta .validation-tooltip {
-    background: rgba(255, 255, 255, 0.95);
-    color: var(--color-text-primary);
-}
-
-.final-cta .validation-tooltip::after {
-    border-top-color: rgba(255, 255, 255, 0.95);
-}
-
-.final-cta .benefit-item {
     color: rgba(255, 255, 255, 0.9);
 }
 
+.final-cta .validation-icon {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.final-cta .email-strength {
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.final-cta .strength-dot {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.final-cta .validation-tooltip {
+    background: rgba(255, 255, 255, 0.98);
+    color: #374151;
+}
+
+.final-cta .validation-tooltip::after {
+    border-top-color: rgba(255, 255, 255, 0.98);
+}
+
+.final-cta .benefit-item {
+    color: rgba(255, 255, 255, 0.98);
+}
+
 .final-cta .benefit-item i {
-    color: var(--color-primary-200);
+    color: #a5f3fc;
 }
 
 
@@ -1321,14 +1321,15 @@ nav {
     justify-content: center;
     gap: 0.75rem;
     font-size: 1rem;
-    opacity: 0.9;
+    opacity: 0.95;
     margin-top: 2rem;
     padding: 1rem 2rem;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.08);
     border-radius: var(--border-radius-md);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
     font-weight: 500;
+    color: rgba(255, 255, 255, 0.98);
 }
 
 .security-note i {
