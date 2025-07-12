@@ -764,7 +764,7 @@
         .how-it-works {
             background: linear-gradient(135deg, #f8fafc 0%, #e5e7eb 100%);
             padding: 5rem 0;
-            margin: 2rem 0;
+            margin: 0 0 2rem 0;
         }
         
         .how-it-works-container {
@@ -1183,6 +1183,64 @@
             transform: scale(1.1);
         }
         
+        /* Counter Animation Effects */
+        @keyframes counterPulse {
+            0% {
+                transform: scale(1);
+                color: inherit;
+            }
+            50% {
+                transform: scale(1.05);
+                color: #6366f1;
+            }
+            100% {
+                transform: scale(1);
+                color: inherit;
+            }
+        }
+        
+        @keyframes counterGlow {
+            0% {
+                box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 0 8px rgba(99, 102, 241, 0.1);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(99, 102, 241, 0);
+            }
+        }
+        
+        .counter-updating {
+            animation: counterPulse 1s ease-in-out;
+        }
+        
+        .waitlist-stats {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .waitlist-stats.updating {
+            animation: counterGlow 1.5s ease-in-out;
+        }
+        
+        #waitlist-count, #final-count {
+            display: inline-block;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            padding: 0 2px;
+            border-radius: 4px;
+        }
+        
+        .urgency-text {
+            display: inline-block;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            color: #ef4444;
+            padding: 0 2px;
+            border-radius: 4px;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .how-it-works-container {
@@ -1688,6 +1746,11 @@
                     submitBtn.classList.remove('loading');
                     email.disabled = false;
                     
+                    // Increment the counter for actual signups
+                    if (window.waitlistCounter) {
+                        window.waitlistCounter.handleNewSignup();
+                    }
+                    
                     // Show thank you popup with the email
                     showThankYouModal(email.value);
                     
@@ -1785,9 +1848,189 @@
             }
         }
         
+        // Dynamic Counter System
+        class WaitlistCounter {
+            constructor() {
+                this.baseCount = 547;
+                this.maxCount = 1000;
+                this.incrementInterval = 45000; // 45 seconds
+                this.storageKey = 'mockly_waitlist_count';
+                this.lastUpdateKey = 'mockly_waitlist_last_update';
+                
+                this.init();
+            }
+            
+            init() {
+                // Get stored count or use base count
+                const stored = this.getStoredCount();
+                this.currentCount = stored.count;
+                this.lastUpdate = stored.lastUpdate;
+                
+                // Update displays
+                this.updateCounterDisplays();
+                
+                // Start periodic updates
+                this.startPeriodicUpdates();
+                
+                // Update on page focus (simulate activity when user returns)
+                document.addEventListener('visibilitychange', () => {
+                    if (!document.hidden) {
+                        this.handlePageFocus();
+                    }
+                });
+            }
+            
+            getStoredCount() {
+                try {
+                    const stored = localStorage.getItem(this.storageKey);
+                    const lastUpdate = localStorage.getItem(this.lastUpdateKey);
+                    
+                    if (stored && lastUpdate) {
+                        const timeSinceUpdate = Date.now() - parseInt(lastUpdate);
+                        const periodsElapsed = Math.floor(timeSinceUpdate / this.incrementInterval);
+                        
+                        // Calculate natural growth during absence
+                        const baseCount = Math.min(
+                            parseInt(stored) + periodsElapsed,
+                            this.maxCount
+                        );
+                        
+                        return {
+                            count: baseCount,
+                            lastUpdate: parseInt(lastUpdate)
+                        };
+                    }
+                } catch (e) {
+                    console.warn('Could not retrieve stored count:', e);
+                }
+                
+                return {
+                    count: this.baseCount,
+                    lastUpdate: Date.now()
+                };
+            }
+            
+            updateStoredCount() {
+                try {
+                    localStorage.setItem(this.storageKey, this.currentCount.toString());
+                    localStorage.setItem(this.lastUpdateKey, Date.now().toString());
+                } catch (e) {
+                    console.warn('Could not store count:', e);
+                }
+            }
+            
+            incrementCount() {
+                if (this.currentCount < this.maxCount) {
+                    // Simulate realistic growth patterns
+                    const hour = new Date().getHours();
+                    const isBusinessHours = hour >= 9 && hour <= 17;
+                    const baseChance = isBusinessHours ? 0.7 : 0.3;
+                    
+                    // Add some randomness to make it feel natural
+                    if (Math.random() < baseChance) {
+                        const increment = Math.random() < 0.8 ? 1 : Math.random() < 0.9 ? 2 : 3;
+                        this.currentCount = Math.min(this.currentCount + increment, this.maxCount);
+                        this.updateCounterDisplays();
+                        this.updateStoredCount();
+                    }
+                }
+            }
+            
+            updateCounterDisplays() {
+                const waitlistCount = document.getElementById('waitlist-count');
+                const finalCount = document.getElementById('final-count');
+                const spotsLeft = document.querySelector('.urgency-text');
+                
+                if (waitlistCount) {
+                    this.animateCounterUpdate(waitlistCount, this.currentCount);
+                }
+                
+                if (finalCount) {
+                    this.animateCounterUpdate(finalCount, this.currentCount);
+                }
+                
+                if (spotsLeft) {
+                    const remainingSpots = Math.max(1, 600 - this.currentCount);
+                    spotsLeft.textContent = `${remainingSpots} spots left`;
+                }
+            }
+            
+            animateCounterUpdate(element, newValue) {
+                const currentValue = parseInt(element.textContent) || 0;
+                if (currentValue === newValue) return;
+                
+                // Add visual effects
+                element.classList.add('counter-updating');
+                const statsContainer = document.querySelector('.waitlist-stats');
+                if (statsContainer) {
+                    statsContainer.classList.add('updating');
+                }
+                
+                const duration = 1500;
+                const startTime = performance.now();
+                
+                function updateNumber(currentTime) {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    
+                    const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+                    const currentDisplayValue = Math.round(currentValue + (newValue - currentValue) * easeOutQuart);
+                    
+                    element.textContent = currentDisplayValue;
+                    
+                    if (progress < 1) {
+                        requestAnimationFrame(updateNumber);
+                    } else {
+                        // Remove animation classes when done
+                        element.classList.remove('counter-updating');
+                        if (statsContainer) {
+                            statsContainer.classList.remove('updating');
+                        }
+                    }
+                }
+                
+                requestAnimationFrame(updateNumber);
+            }
+            
+            startPeriodicUpdates() {
+                // Initial random delay to stagger updates
+                const initialDelay = Math.random() * 30000; // 0-30 seconds
+                
+                setTimeout(() => {
+                    this.incrementCount();
+                    
+                    // Set up regular intervals
+                    setInterval(() => {
+                        this.incrementCount();
+                    }, this.incrementInterval);
+                }, initialDelay);
+            }
+            
+            handlePageFocus() {
+                // Simulate some activity when user returns to page
+                const timeSinceLastUpdate = Date.now() - this.lastUpdate;
+                if (timeSinceLastUpdate > 60000) { // If away for more than 1 minute
+                    // Small chance of increment when returning
+                    if (Math.random() < 0.3) {
+                        this.incrementCount();
+                    }
+                }
+            }
+            
+            // Method to manually increment (call this when someone actually signs up)
+            handleNewSignup() {
+                this.currentCount++;
+                this.updateCounterDisplays();
+                this.updateStoredCount();
+            }
+        }
+
         // Initialize everything when DOM is ready
         document.addEventListener('DOMContentLoaded', function() {
             console.log('DOM loaded, initializing form validation...'); // Debug log
+            
+            // Initialize dynamic counter
+            window.waitlistCounter = new WaitlistCounter();
             
             // Initialize main form validation
             try {
