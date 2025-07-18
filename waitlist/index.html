@@ -8,9 +8,16 @@
     <title>Get Your Dream Job with AI Interview Coaching | Mockly - 50% Student Discount</title>
     <meta name="title" content="Get Your Dream Job with AI Interview Coaching | Mockly - 50% Student Discount">
     <meta name="description" content="Land your dream job with AI interview coaching. Get real-time feedback on voice, eye contact & gestures. Join 547+ students who landed at Google, Meta, Amazon. 50% student discount.">
-    <meta name="keywords" content="get dream job, land job at Google, Meta Amazon internship, interview practice, behavioral interview, AI interview coach, STAR method, interview feedback, job interview preparation, tech interview, student discount, interview training, career coaching, Google interview, Meta interview, Amazon interview, tech job interview">
-    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="get dream job, land job at Google, Meta Amazon internship, interview practice, behavioral interview, AI interview coach, STAR method, interview feedback, job interview preparation, tech interview, student discount, interview training, career coaching, Google interview, Meta interview, Amazon interview, tech job interview, AI interview practice, mock interview, interview coaching">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="language" content="English">
+    <meta name="geo.region" content="US">
+    <meta name="geo.placename" content="United States">
+    <meta name="distribution" content="global">
+    <meta name="rating" content="general">
+    <meta name="revisit-after" content="7 days">
+    <meta name="googlebot" content="index, follow">
+    <meta name="bingbot" content="index, follow">
     <meta name="author" content="Mockly">
     <meta name="subject" content="AI-Powered Interview Practice and Coaching">
     <meta name="copyright" content="Mockly">
@@ -81,12 +88,17 @@
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     <link rel="dns-prefetch" href="https://formspree.io">
     
+    <!-- Preload critical resources -->
+    <link rel="preload" href="styles2.css" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style">
+    <link rel="preload" href="favicon.ico" as="image" type="image/x-icon">
+    
     <!-- Favicon and App Icons -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
     
     <!-- External Resources -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -116,7 +128,21 @@
         "sameAs": [
             "https://www.linkedin.com/company/mockly",
             "https://twitter.com/mockly"
-        ]
+        ],
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "US"
+        },
+        "areaServed": "Worldwide",
+        "serviceArea": {
+            "@type": "GeoCircle",
+            "geoMidpoint": {
+                "@type": "GeoCoordinates",
+                "latitude": 37.7749,
+                "longitude": -122.4194
+            },
+            "geoRadius": "50000"
+        }
     }
     </script>
     
@@ -277,12 +303,6 @@
                  "name": "Home",
                  "item": "https://mockly.pro"
              },
-             {
-                 "@type": "ListItem",
-                 "position": 2,
-                 "name": "Waitlist",
-                 "item": "https://mockly.pro/waitlist/"
-             }
          ]
      }
      </script>
@@ -391,7 +411,7 @@
     <header role="banner">
         <nav role="navigation" aria-label="Main navigation">
             <a href="#hero" class="logo" aria-label="Mockly - AI-Powered Interview Practice">
-                <i class="fas fa-brain" aria-hidden="true"></i>
+                <img src="logo.png" alt="Mockly Logo" class="logo-image">
                 Mockly
             </a>
             <ul class="nav-links" role="menubar">
@@ -521,7 +541,7 @@
                 
                 <div class="feature-card animate-on-scroll">
                     <div class="feature-icon">
-                        <i class="fas fa-brain"></i>
+                        <img src="logo.png" alt="AI-Powered Insights" class="feature-logo">
                     </div>
                     <h3>AI-Powered Insights</h3>
                     <p>Leverage cutting-edge artificial intelligence that processes your verbal, visual, and gestural data to identify patterns and provide personalized improvement strategies.</p>

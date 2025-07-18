@@ -130,7 +130,7 @@
     --font-size-base: clamp(1rem, 1.3vw, 1.125rem);
     --font-size-lg: clamp(1.125rem, 1.5vw, 1.25rem);
     --font-size-xl: clamp(1.25rem, 1.8vw, 1.5rem);
-    --font-size-2xl: clamp(1.5rem, 2.2vw, 1.875rem);
+    --font-size-2xl: clamp(1.4rem, 2.2vw, 1.675rem);
     --font-size-3xl: clamp(1.875rem, 2.8vw, 2.25rem);
     --font-size-4xl: clamp(2.25rem, 3.5vw, 3rem);
     --font-size-5xl: clamp(3rem, 4.5vw, 4rem);
@@ -337,6 +337,26 @@ nav {
 
 .logo:hover i {
     transform: rotate(10deg) scale(1.1);
+}
+
+.logo-image {
+    height: 2rem;
+    width: auto;
+    transition: all var(--transition-slow);
+}
+
+.logo:hover .logo-image {
+    transform: scale(1.1);
+}
+
+.feature-logo {
+    height: 2.5rem;
+    width: auto;
+    transition: all var(--transition-slow);
+}
+
+.feature-card:hover .feature-logo {
+    transform: scale(1.1);
 }
 
 .nav-links {
