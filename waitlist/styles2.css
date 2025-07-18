@@ -1075,6 +1075,63 @@ nav {
     transform: translateY(-2px);
 }
 
+/* ===== Benefits Section ===== */
+.benefits-section {
+    padding: 6rem var(--spacing-lg) 4rem;
+    background: var(--color-background);
+    position: relative;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.benefit-card {
+    background: white;
+    padding: 30px;
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--color-neutral-200);
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.benefit-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-primary-500), var(--color-accent-blue-500));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.benefit-icon i {
+    font-size: 24px;
+    color: white;
+}
+
+.benefit-card h3 {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-neutral-800);
+    margin-bottom: 15px;
+}
+
+.benefit-card p {
+    color: var(--color-neutral-600);
+    line-height: 1.6;
+    margin: 0;
+}
+
 /* ===== FAQ Section ===== */
 .faq-section {
     padding: 6rem var(--spacing-lg) 4rem;
@@ -1376,6 +1433,11 @@ nav {
 
     .testimonials-grid {
         grid-template-columns: 1fr;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
 
     .logos-container {
