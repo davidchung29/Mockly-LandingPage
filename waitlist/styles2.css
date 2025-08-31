@@ -471,6 +471,7 @@ nav {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     position: relative;
+    padding-right: 2px;
 }
 
 .hero .gradient-text::after {
@@ -522,7 +523,7 @@ nav {
     gap: 0.5rem;
     transition: all var(--transition-slow);
     box-shadow: var(--shadow-apple);
-    min-width: 160px;
+    min-width: 500px; /* Add this line - increase from 160px */
     justify-content: center;
     position: relative;
     overflow: hidden;

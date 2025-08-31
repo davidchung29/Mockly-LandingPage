@@ -418,8 +418,8 @@
                 <li role="none"><a href="#how-it-works" role="menuitem">Features</a></li>
                 <li role="none"><a href="#faq" role="menuitem">FAQs</a></li>
             </ul>
-            <a href="#hero" class="nav-cta" id="nav-cta" aria-label="Secure My Spot - Join waitlist">
-                Secure My Spot 
+            <a href="https://app.mockly.pro/" class="nav-cta" id="nav-cta" aria-label="Try Now" target="_blank">
+                Try Now 
                 <i class="fas fa-rocket btn-icon" aria-hidden="true"></i>
             </a>
         </nav>
@@ -439,63 +439,11 @@
             <p>
                 Real-time AI feedback on voice, eye contact, and hand gestures. Master STAR and land the job.
             </p>
-            <div class="waitlist-form animate-on-scroll">
-                <form id="waitlist-signup" class="signup-form" novalidate>
-                                                    <div class="form-group">
-                                    <label for="email" class="sr-only">Email address</label>
-                                    <input 
-                                        type="email" 
-                                        id="email" 
-                                        name="email"
-                                        placeholder="Enter your email for a free Pro account"
-                                        required
-                                        autocomplete="off"
-                                        aria-describedby="email-error email-success"
-                                    >
-                                    <i class="fas fa-times-circle validation-icon error" aria-hidden="true"></i>
-                                    <i class="fas fa-check-circle validation-icon success" aria-hidden="true"></i>
-                                    <i class="fas fa-spinner validation-icon validating" aria-hidden="true"></i>
-                                    <div class="validation-progress"></div>
-                                    <div class="validation-tooltip">Enter a valid email to join the waitlist</div>
-                                    
-                                    <div id="email-error" class="error-message" role="alert" aria-live="polite">
-                                        <i class="fas fa-exclamation-triangle"></i>
-                                        <span class="error-text"></span>
-                                    </div>
-                                    
-                                    <div id="email-success" class="success-message" role="status" aria-live="polite">
-                                        <i class="fas fa-check-circle"></i>
-                                        <span class="success-text"></span>
-                                    </div>
-                                    
-                                    <div class="email-strength">
-                                        <span class="strength-text">Email validation:</span>
-                                        <div class="strength-indicator">
-                                            <div class="strength-dot" data-check="format"></div>
-                                            <div class="strength-dot" data-check="domain"></div>
-                                            <div class="strength-dot" data-check="edu"></div>
-                                        </div>
-                                    </div>
-                                    
-                                    <button type="submit" class="waitlist-btn" id="submit-btn">
-                                        <span class="btn-text">Secure My Spot</span>
-                                        <i class="fas fa-rocket btn-icon" aria-hidden="true"></i>
-                                    </button>
-                                </div>
-                    <div class="form-benefits">
-                        <div class="benefit-item">
-                            <i class="fas fa-gift" aria-hidden="true"></i>
-                            <span>Lifetime Pro for waitlist</span>
-                        </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-rocket" aria-hidden="true"></i>
-                            <span>Beta access in September 2025</span>
-                        </div>
-                    </div>
-                </form>
-                <!-- <div class="waitlist-stats" role="status" aria-live="polite">
-                    <span id="waitlist-count">547</span> students already joined • Only <span class="urgency-text">53 spots left</span> for early access
-                </div> -->
+            <div class="hero-actions">
+                <a href="https://app.mockly.pro/" class="primary-button" target="_blank">
+                <i class="fas fa-play"></i>
+                    Try Now
+                </a>
             </div>
             
         </div>
@@ -747,7 +695,7 @@
             -->
         </div>
     </section>
-    -->
+    
     <!-- Demo Section 
     <section class="demo" id="demo">
         <div class="demo-container">
@@ -1832,49 +1780,7 @@
             });
         }
 
-        const navCta = document.getElementById('nav-cta');
-        if (navCta) {
-            navCta.addEventListener('click', (e) => {
-                e.preventDefault();
-                
-                // Scroll to hero section
-                const heroSection = document.querySelector('#hero');
-                if (heroSection) {
-                    heroSection.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    
-                    // Focus and highlight the email input after scroll
-                    setTimeout(() => {
-                        const emailInput = document.getElementById('email');
-                        if (emailInput) {
-                            emailInput.focus();
-                            emailInput.select();
-                            
-                            // Add a subtle highlight animation
-                            emailInput.style.animation = 'highlightEmail 2s ease-in-out';
-                            setTimeout(() => {
-                                emailInput.style.animation = '';
-                            }, 2000);
-                        }
-                    }, 800); // Wait for scroll to complete
-                }
-            });
-        }
-
-        // Enhanced interaction effects
-        document.querySelectorAll('.feature-card').forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                card.style.transform = 'translateY(-8px)';
-                card.style.boxShadow = '0 12px 40px rgba(0, 0, 0, 0.15)';
-            });
-            
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'translateY(0)';
-                card.style.boxShadow = '';
-            });
-        });
+        
 
         // Staggered animation for feature cards
         const featureCards = document.querySelectorAll('.feature-card');
